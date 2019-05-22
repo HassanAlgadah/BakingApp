@@ -22,16 +22,15 @@ public class videoActivity extends AppCompatActivity {
         step = bundle.getParcelable("step");
         pos = bundle.getInt("position");
         steps = bundle.getParcelableArrayList("steps");
-        System.out.println(pos);
 
         MasterFragment description = new MasterFragment();
-
         description.setIsvid(false);
         description.setSteps(step);
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
                 .add(R.id.de,description)
                 .commit();
+
 
     }
     void next(View view) {
