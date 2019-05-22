@@ -17,7 +17,7 @@ public class StepsAdapter extends RecyclerView.Adapter<StepsAdapter.Viewholder> 
     private final RecAdapterClickHandler mClickHandler;
 
     public interface RecAdapterClickHandler {
-        void onClick(Step step);
+        void onClick(Step step,int k);
     }
 
     public StepsAdapter(RecAdapterClickHandler mClickHandler) {
@@ -39,7 +39,7 @@ public class StepsAdapter extends RecyclerView.Adapter<StepsAdapter.Viewholder> 
     @Override
     public void onBindViewHolder(@NonNull Viewholder viewholder, int i) {
         Step m = steps.get(i);
-        viewholder.title.setText(m.getDescription());
+        viewholder.title.setText(m.getShortDescription());
 
     }
 
@@ -69,7 +69,7 @@ public class StepsAdapter extends RecyclerView.Adapter<StepsAdapter.Viewholder> 
         public void onClick(View v) {
             int adapterPosition = getAdapterPosition();
             Step m = steps.get(adapterPosition);
-            mClickHandler.onClick(m);
+            mClickHandler.onClick(m,adapterPosition);
         }
     }
 }
