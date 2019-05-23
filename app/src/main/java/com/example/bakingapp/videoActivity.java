@@ -32,6 +32,7 @@ public class videoActivity extends AppCompatActivity {
         int orientation = getResources().getConfiguration().orientation;
         if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
             findViewById(R.id.de).setVisibility(View.GONE);
+            findViewById(R.id.prev).setVisibility(View.GONE);
             findViewById(R.id.nextbutton).setVisibility(View.GONE);
 
         } else {
@@ -91,6 +92,7 @@ public class videoActivity extends AppCompatActivity {
     private void changePage() {
         fragmentManager.beginTransaction().remove(vid).commit();
         fragmentManager.beginTransaction().remove(description).commit();
+
         description = new MasterFragment();
         description.setSteps(steps.get(pos));
         fragmentManager.beginTransaction()
@@ -109,5 +111,6 @@ public class videoActivity extends AppCompatActivity {
         super.onSaveInstanceState(outState);
         outState.putParcelableArrayList("staps", steps);
         outState.putInt("posi", pos);
+
     }
 }

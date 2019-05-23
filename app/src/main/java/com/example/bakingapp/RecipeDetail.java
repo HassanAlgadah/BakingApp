@@ -63,7 +63,6 @@ public class RecipeDetail extends AppCompatActivity implements StepsAdapter.RecA
         }else{
             fragmentManager = getSupportFragmentManager();
             if(fragmentManager.findFragmentById(R.id.decr)!=null) {
-                System.out.println("are we ?" );
                 fragmentManager.beginTransaction().remove(vid).commit();
                 fragmentManager.beginTransaction().remove(description).commit();
             }
