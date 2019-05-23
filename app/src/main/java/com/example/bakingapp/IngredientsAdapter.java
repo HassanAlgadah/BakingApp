@@ -28,7 +28,7 @@ public class IngredientsAdapter extends RecyclerView.Adapter<IngredientsAdapter.
     @Override
     public void onBindViewHolder(@NonNull IngredientsAdapter.Viewholder viewholder, int i) {
         Ingredient m = Ingredients.get(i);
-        viewholder.title.setText(m.getQuantity()+m.getMeasure()+" "+m.getIngredient());
+        viewholder.title.setText(m.getQuantity() + m.getMeasure() + " " + m.getIngredient());
 
     }
 
@@ -45,7 +45,7 @@ public class IngredientsAdapter extends RecyclerView.Adapter<IngredientsAdapter.
     }
 
 
-    public class Viewholder extends RecyclerView.ViewHolder{
+    public class Viewholder extends RecyclerView.ViewHolder {
         public TextView title;
 
         public Viewholder(View v) {

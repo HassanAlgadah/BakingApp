@@ -13,8 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         >
-        <activity android:name=".videoActivity"></activity>
-        <activity android:name=".RecipeDetail" />
+        <activity android:name=".VideoActivity"></activity>
+        <activity android:name=".RecipeDetailActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

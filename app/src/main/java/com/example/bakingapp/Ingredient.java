@@ -53,14 +53,12 @@ public class Ingredient implements Parcelable {
         dest.writeString(ingredient);
     }
 
-    public static final Parcelable.Creator<Ingredient> CREATOR = new Parcelable.Creator<Ingredient>()
-    {
-        public Ingredient createFromParcel(Parcel in)
-        {
+    public static final Parcelable.Creator<Ingredient> CREATOR = new Parcelable.Creator<Ingredient>() {
+        public Ingredient createFromParcel(Parcel in) {
             return new Ingredient(in);
         }
-        public Ingredient[] newArray(int size)
-        {
+
+        public Ingredient[] newArray(int size) {
             return new Ingredient[size];
         }
     };

@@ -3,21 +3,15 @@ package com.example.bakingapp;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Food {
+public class Recipe {
     private String id;
     private String name;
     private List<Ingredient> ingredients;
     private List<Step> steps;
 
-    public Food() {
+    public Recipe() {
     }
 
-    public Food(String id, String name, ArrayList<Ingredient> Ingredients, ArrayList<Step> steps) {
-        this.id = id;
-        this.name = name;
-        this.ingredients = Ingredients;
-        steps = steps;
-    }
 
     public String getId() {
         return id;

@@ -16,12 +16,10 @@ public class Step implements Parcelable {
     public Step(Parcel in) {
         this.id = in.readString();
         this.shortDescription = in.readString();
-        this.description =in.readString();
+        this.description = in.readString();
         this.videoURL = in.readString();
         this.thumbnailURL = in.readString();
     }
-
-
 
 
     public String getId() {
@@ -63,6 +61,7 @@ public class Step implements Parcelable {
     public void setThumbnailURL(String thumbnailURL) {
         this.thumbnailURL = thumbnailURL;
     }
+
     @Override
     public int describeContents() {
         return 0;
@@ -77,14 +76,12 @@ public class Step implements Parcelable {
         dest.writeString(thumbnailURL);
     }
 
-    public static final Parcelable.Creator<Step> CREATOR = new Creator<Step>()
-    {
-        public Step createFromParcel(Parcel in)
-        {
+    public static final Parcelable.Creator<Step> CREATOR = new Creator<Step>() {
+        public Step createFromParcel(Parcel in) {
             return new Step(in);
         }
-        public Step[] newArray(int size)
-        {
+
+        public Step[] newArray(int size) {
             return new Step[size];
         }
     };

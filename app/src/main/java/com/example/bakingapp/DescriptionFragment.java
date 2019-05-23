@@ -21,11 +21,11 @@ import com.google.android.exoplayer2.util.Util;
 
 import java.util.List;
 
-public class MasterFragment extends Fragment {
+public class DescriptionFragment extends Fragment {
     private Step steps;
 
 
-    public MasterFragment() {
+    public DescriptionFragment() {
     }
 
     @Nullable
@@ -36,18 +36,12 @@ public class MasterFragment extends Fragment {
         if (savedInstanceState != null) {
             steps = savedInstanceState.getParcelable("staps");
         }
-        PlayerView playerView = rootView.findViewById(R.id.vidplayer);
         if (steps != null) {
             text.setText(steps.getDescription());
         }
 
         return rootView;
 
-    }
-
-
-    public Step getSteps() {
-        return steps;
     }
 
     public void setSteps(Step steps) {

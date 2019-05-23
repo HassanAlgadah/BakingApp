@@ -36,10 +36,10 @@ public class VideoFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.vid_fragment, container, false);
         playerView = rootView.findViewById(R.id.vidplayer);
-        if(savedInstanceState!=null){
+        if (savedInstanceState != null) {
             step = savedInstanceState.getParcelable("staps");
         }
-        if(step.getVideoURL().equals("")){
+        if (step.getVideoURL().equals("")) {
             Toast.makeText(this.getContext(), "there is no video for this step", Toast.LENGTH_SHORT).show();
             return rootView;
         }
@@ -63,14 +63,15 @@ public class VideoFragment extends Fragment {
     @Override
     public void onStop() {
         super.onStop();
-        if(playerView!=null&&player!=null) {
+        if (playerView != null && player != null) {
             playerView.setPlayer(null);
             player.release();
         }
     }
+
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
-        outState.putParcelable("staps",step);
+        outState.putParcelable("staps", step);
     }
 }
 
