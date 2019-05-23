@@ -58,9 +58,6 @@ public class VideoFragment extends Fragment {
             return rootView;
         }
 
-        if(savedInstanceState==null) {
-            initializePlayer();
-        }
         return rootView;
 
     }
