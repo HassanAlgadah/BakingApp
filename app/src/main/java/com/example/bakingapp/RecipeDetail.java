@@ -1,6 +1,7 @@
 package com.example.bakingapp;
 
 import android.content.Intent;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -16,12 +17,18 @@ public class RecipeDetail extends AppCompatActivity implements StepsAdapter.RecA
     private StepsAdapter stepsAdapter;
     private IngredientsAdapter ingAdapter;
     private RecyclerView.LayoutManager layoutManager , layoutManager2;
+    private boolean isTablet;
+    private FragmentManager fragmentManager;
+    private MasterFragment description;
+    private VideoFragment vid;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_detail);
+        isTablet = getResources().getBoolean(R.bool.isTablet);
+
         Bundle bundle = getIntent().getExtras();
         steps = bundle.getParcelableArrayList("steps");
         ingredients = bundle.getParcelableArrayList("ingredients");
@@ -45,13 +52,39 @@ public class RecipeDetail extends AppCompatActivity implements StepsAdapter.RecA
 
     @Override
     public void onClick(Step step,int k) {
-        Intent intent = new Intent(this,videoActivity.class);
-        Bundle bundle = new Bundle();
-        bundle.putParcelable("step",step);
-        bundle.putParcelableArrayList("steps",steps);
-        bundle.putInt("position",k);
-        intent.putExtras(bundle);
-        startActivity(intent);
+        if(!isTablet) {
+            Intent intent = new Intent(this, videoActivity.class);
+            Bundle bundle = new Bundle();
+            bundle.putParcelable("step", step);
+            bundle.putParcelableArrayList("steps", steps);
+            bundle.putInt("position", k);
+            intent.putExtras(bundle);
+            startActivity(intent);
+        }else{
+            fragmentManager = getSupportFragmentManager();
+            if(fragmentManager.findFragmentById(R.id.decr)!=null) {
+                System.out.println("are we ?" );
+                fragmentManager.beginTransaction().remove(vid).commit();
+                fragmentManager.beginTransaction().remove(description).commit();
+            }
+
+            description = new MasterFragment();
+            description.setSteps(step);
+            fragmentManager.beginTransaction()
+                    .add(R.id.decr, description)
+                    .commit();
+
+            vid = new VideoFragment();
+            vid.setStep(step);
+            fragmentManager.beginTransaction()
+                    .add(R.id.video, vid)
+                    .commit();
+
+
+
+
+
+        }
 
     }
 }

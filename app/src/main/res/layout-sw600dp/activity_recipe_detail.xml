@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:context=".RecipeDetail"
+        android:fadeScrollbars="false"
+        android:scrollbarFadeDuration="0"
+
+        >
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:fadeScrollbars="false"
+
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="the Ingredients:"
+                android:textSize="20dp"
+                android:layout_margin="10dp"
+                />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/ing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="30dp"
+                ></View>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/steps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <FrameLayout
+            android:id="@+id/video"
+            android:layout_width="match_parent"
+            android:layout_height="345dp"
+            android:layout_gravity="center">
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/decr"
+            android:layout_width="match_parent"
+            android:layout_height="255dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"></FrameLayout>
+    </LinearLayout>
+
+
+</LinearLayout>
