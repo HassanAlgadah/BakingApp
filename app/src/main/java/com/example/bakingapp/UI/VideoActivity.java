@@ -1,6 +1,7 @@
 package com.example.bakingapp.UI;
 
 import android.content.res.Configuration;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -88,9 +89,10 @@ public class VideoActivity extends AppCompatActivity {
     }
 
     private void changePage() {
-        fragmentManager.beginTransaction().remove(vid).commit();
-        fragmentManager.beginTransaction().remove(description).commit();
-
+        for (Fragment fragment:getSupportFragmentManager().getFragments()) {
+            getSupportFragmentManager().beginTransaction().remove(fragment).commit();
+        }
+        fragmentManager = getSupportFragmentManager();
         description = new DescriptionFragment();
         description.setSteps(steps.get(pos));
         fragmentManager.beginTransaction()
