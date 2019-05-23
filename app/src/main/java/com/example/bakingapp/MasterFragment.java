@@ -22,9 +22,7 @@ import com.google.android.exoplayer2.util.Util;
 import java.util.List;
 
 public class MasterFragment extends Fragment {
-    private boolean isvid;
     private Step steps;
-    private SimpleExoPlayer player;
 
 
     public MasterFragment() {
@@ -34,37 +32,19 @@ public class MasterFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragmentbody, container, false);
-        TextView text =rootView.findViewById(R.id.desc);
-        PlayerView playerView = rootView.findViewById(R.id.vidplayer);
-        if(!isvid) {
-            if (steps != null) {
-                text.setText(steps.getDescription());
-            }
-        }else{
-            player = ExoPlayerFactory.newSimpleInstance(this.getContext(),
-                    new DefaultTrackSelector());
-            playerView.setPlayer(player);
-
-            DefaultDataSourceFactory defaultDataSourceFactory = new DefaultDataSourceFactory(this.getContext(),
-                    Util.getUserAgent(this.getContext(),"ExpoPlayer"));
-
-            ExtractorMediaSource mediaSource = new ExtractorMediaSource.Factory(defaultDataSourceFactory)
-                    .createMediaSource(Uri.parse("https://d17h27t6h515a5.cloudfront.net/topher/2017/April/58ffd9cb_4-press-crumbs-in-pie-plate-creampie/4-press-crumbs-in-pie-plate-creampie.mp4"));
-            player.prepare(mediaSource);
-            player.setPlayWhenReady(true);
-
+        TextView text = rootView.findViewById(R.id.desc);
+        if (savedInstanceState != null) {
+            steps = savedInstanceState.getParcelable("staps");
         }
+        PlayerView playerView = rootView.findViewById(R.id.vidplayer);
+        if (steps != null) {
+            text.setText(steps.getDescription());
+        }
+
         return rootView;
 
     }
 
-    public boolean isIsvid() {
-        return isvid;
-    }
-
-    public void setIsvid(boolean isvid) {
-        this.isvid = isvid;
-    }
 
     public Step getSteps() {
         return steps;
@@ -72,5 +52,10 @@ public class MasterFragment extends Fragment {
 
     public void setSteps(Step steps) {
         this.steps = steps;
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        outState.putParcelable("staps", steps);
     }
 }

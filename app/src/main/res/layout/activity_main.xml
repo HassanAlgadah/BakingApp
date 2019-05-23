@@ -25,6 +25,7 @@
                 android:textSize="30dp"
                 />
             <ImageView
+
                 android:layout_marginTop="10dp"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
@@ -40,6 +41,9 @@
         android:background="@drawable/bakenutellapie"
         tools:layout_editor_absoluteY="100dp"
         android:onClick="NutellaPie"
+        android:id="@+id/text"
+
+
         />
     <TextView
         android:layout_width="wrap_content"
@@ -60,6 +64,7 @@
         android:onClick="Brownies"
         android:textSize="20dp"
         android:textStyle="bold"
+        android:id="@+id/brownies"
 
         />
     <TextView
@@ -70,6 +75,7 @@
         android:layout_marginBottom="40dp"
         android:textSize="20dp"
         android:textStyle="bold"
+
 
         />
     <ImageButton
