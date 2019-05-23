@@ -1,4 +1,4 @@
-package com.example.bakingapp;
+package com.example.bakingapp.UI;
 
 import android.content.Intent;
 import android.support.v4.app.FragmentManager;
@@ -6,6 +6,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+
+import com.example.bakingapp.Fragments.DescriptionFragment;
+import com.example.bakingapp.Data.Ingredient;
+import com.example.bakingapp.Adapters.IngredientsAdapter;
+import com.example.bakingapp.R;
+import com.example.bakingapp.Data.Step;
+import com.example.bakingapp.Adapters.StepsAdapter;
+import com.example.bakingapp.Fragments.VideoFragment;
 
 import java.util.ArrayList;
 

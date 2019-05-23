@@ -1,4 +1,4 @@
-package com.example.bakingapp;
+package com.example.bakingapp.UI;
 
 import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
@@ -7,6 +7,12 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
+
+import com.example.bakingapp.Data.Ingredient;
+import com.example.bakingapp.Networking.Networking;
+import com.example.bakingapp.R;
+import com.example.bakingapp.Data.Recipe;
+import com.example.bakingapp.Data.Step;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,6 @@
-package com.example.bakingapp;
+package com.example.bakingapp.Networking;
+
+import com.example.bakingapp.Data.Recipe;
 
 import java.util.List;
 

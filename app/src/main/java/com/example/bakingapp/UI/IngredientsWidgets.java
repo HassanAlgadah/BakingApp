@@ -1,18 +1,17 @@
-package com.example.bakingapp;
+package com.example.bakingapp.UI;
 
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
-import android.widget.Button;
 import android.widget.RemoteViews;
-import android.widget.TextView;
 
-import java.util.List;
+import com.example.bakingapp.R;
+import com.example.bakingapp.UI.MainActivity;
 
-import static com.example.bakingapp.MainActivity.ing;
+import static com.example.bakingapp.UI.MainActivity.ing;
+
 
 public class IngredientsWidgets extends AppWidgetProvider {
 

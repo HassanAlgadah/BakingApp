@@ -1,4 +1,4 @@
-package com.example.bakingapp;
+package com.example.bakingapp.Fragments;
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -8,9 +8,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.bakingapp.R;
+import com.example.bakingapp.Data.Step;
 import com.google.android.exoplayer2.ExoPlayerFactory;
 import com.google.android.exoplayer2.SimpleExoPlayer;
 import com.google.android.exoplayer2.source.ExtractorMediaSource;

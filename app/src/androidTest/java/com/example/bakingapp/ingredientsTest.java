@@ -4,23 +4,19 @@ package com.example.bakingapp;
 
 
 import android.support.test.espresso.Espresso;
-import android.support.test.espresso.ViewAssertion;
-import android.support.test.espresso.action.ViewActions;
 import android.support.test.espresso.assertion.ViewAssertions;
 import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
-import android.support.v7.widget.RecyclerView;
 
+
+import com.example.bakingapp.UI.MainActivity;
 
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import java.util.regex.Matcher;
-
 import static android.support.test.espresso.action.ViewActions.click;
-import static android.support.test.espresso.action.ViewActions.doubleClick;
 
 
 @RunWith(AndroidJUnit4.class)

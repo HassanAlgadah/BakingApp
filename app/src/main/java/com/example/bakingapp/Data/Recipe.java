@@ -1,6 +1,5 @@
-package com.example.bakingapp;
+package com.example.bakingapp.Data;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Recipe {
